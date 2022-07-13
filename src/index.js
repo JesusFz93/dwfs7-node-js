@@ -1,3 +1,4 @@
+// const { suma } = require("./operaciones");
 const axios = require("axios");
 
 const promesa = new Promise((resolve, reject) => {
@@ -7,6 +8,7 @@ const promesa = new Promise((resolve, reject) => {
   }, 2000);
 });
 
+// ASYNC AWAIT
 const ejecutaPromesa = async () => {
   try {
     // const data = await promesa;
@@ -19,7 +21,38 @@ const ejecutaPromesa = async () => {
   }
 };
 
-ejecutaPromesa();
+// ejecutaPromesa();
+
+// PROMESAS
+const funcionPromesa = () => {
+  axios
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((e) => console.log(e));
+};
+
+funcionPromesa();
+
+//CALLBACK
+// const saludo = (funcion, nombre) => {
+//   console.log("Hola", nombre);
+//   funcion();
+// };
+
+// const despedida = () => {
+//   console.log("adios");
+// };
+
+// saludo(despedida, "Jesus");
+
+// const suma = (a, b) => {
+//   return a + b;
+// };
+
+// const resultado = suma(4, 7);
+// console.log(resultado);
 
 // const { suma, resta, multiplicacion, division } = require("./operaciones");
 
